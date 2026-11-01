@@ -49,7 +49,7 @@ export function cargar(): Reserva[] {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     const data = raw ? JSON.parse(raw) : null;
-    if (Array.isArray(data) && data.length > 0) return data;
+    if (Array.isArray(data)) return data;
   } catch {}
   localStorage.setItem(STORAGE_KEY, JSON.stringify(EJEMPLO));
   return EJEMPLO;
